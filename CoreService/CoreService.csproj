@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssemblyName>Matrix.Net.CoreService</AssemblyName>
+    <RootNamespace>Matrix.Net.CoreService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <COMReference Include="MatrixWebObjAccess.dll">
+      <Guid>fa544464-d892-4466-aea4-3fec50a52ed6</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Lcid>0</Lcid>
+      <Isolated>false</Isolated>
+    </COMReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="..\Resources\matrixconnection.ini" Link="matrixconnection.ini" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain\Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="IMatrixMessageService.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+</Project>
